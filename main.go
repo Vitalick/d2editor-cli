@@ -89,7 +89,7 @@ func parseArgs() {
 	flag.BoolVar(&parsedFlags.toJSON, "tojson", parsedFlags.toJSON, "Convert d2s to json or create json.")
 	flag.BoolVar(&parsedFlags.toD2s, "tod2s", parsedFlags.toD2s, "Convert json to d2s or create d2s.")
 	flag.StringVar(&parsedFlags.output, "o", parsedFlags.output, "Optional path of the output folder.")
-	flag.UintVar(&parsedFlags.version, "v", parsedFlags.version, "Save with specific version (default: 97).")
+	flag.UintVar(&parsedFlags.version, "v", parsedFlags.version, "Save with specific version.")
 	flag.Parse()
 
 	// Make sure we have input paths.
