@@ -58,6 +58,7 @@ func parseArgs() {
 	flag.BoolVar(&parsedFlags.d2sToJSON, "tojson", parsedFlags.d2sToJSON, "Convert d2s to json.")
 	flag.BoolVar(&parsedFlags.jsonToD2s, "fromjson", parsedFlags.jsonToD2s, "Convert json to d2s.")
 	flag.StringVar(&parsedFlags.output, "o", parsedFlags.output, "Optional path of the output folder.")
+	flag.Parse()
 
 	// Make sure we have input paths.
 	if flag.NArg() == 0 {
