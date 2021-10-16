@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/vitalick/d2s"
+	"github.com/vitalick/go-d2editor"
 	"os"
 )
 
@@ -21,12 +21,12 @@ func main() {
 
 	if parsedFlags.d2sToJSON {
 		for _, f := range parsedFlags.input {
-			c, err := d2s.Open(f)
+			c, err := d2editor.Open(f)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Error \"%v\" on open file \"%s\", skipped \n\n", err, f)
 				continue
 			}
-			err = d2s.SaveJSON(c, parsedFlags.output)
+			err = d2editor.SaveJSON(c, parsedFlags.output)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Error \"%v\" on save file \"%s\", skipped \n\n", err, f)
 				continue
@@ -36,12 +36,12 @@ func main() {
 
 	if parsedFlags.jsonToD2s {
 		for _, f := range parsedFlags.input {
-			c, err := d2s.OpenJSON(f)
+			c, err := d2editor.OpenJSON(f)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Error \"%v\" on open file \"%s\", skipped \n\n", err, f)
 				continue
 			}
-			err = d2s.Save(c, parsedFlags.output)
+			err = d2editor.Save(c, parsedFlags.output)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Error \"%v\" on save file \"%s\", skipped \n\n", err, f)
 				continue
