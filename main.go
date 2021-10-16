@@ -35,6 +35,7 @@ func main() {
 					fmt.Fprintf(os.Stderr, "Error \"%v\" on create character \"%s\", skipped \n\n", err, f)
 					continue
 				}
+				c.Name = f
 			} else {
 				c, err = d2editor.Open(f)
 				if err != nil {
@@ -61,6 +62,7 @@ func main() {
 					fmt.Fprintf(os.Stderr, "Error \"%v\" on create character \"%s\", skipped \n\n", err, f)
 					continue
 				}
+				c.Name = f
 			} else {
 				c, err = d2editor.OpenJSON(f)
 				if err != nil {
