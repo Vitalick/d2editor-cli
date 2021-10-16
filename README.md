@@ -18,7 +18,7 @@ go install github.com/vitalick/d2s/d2editor-cli@latest
 
 For convert JSON to .d2s, use the following:
 ```bash
-d2editor-cli -fromjson <input files>
+d2editor-cli -tod2s <input files>
 ```
 
 For convert .d2s to JSON, use the following:
@@ -26,10 +26,21 @@ For convert .d2s to JSON, use the following:
 d2editor-cli -tojson <input files>
 ```
 
+For create empty .d2s or JSON, use the following:
+```bash
+d2editor-cli -e -tod2s <input names>
+d2editor-cli -e -tojson <input names>
+```
+
 To specify the path to the output folder, we use the following:
 ```bash
-d2editor-cli -fromjson -o <output folder> <input files>
+d2editor-cli -tod2s -o <output folder> <input files>
 d2editor-cli -tojson -o <output folder> <input files>
+```
+
+To specify the version of save, we use the following:
+```bash
+d2editor-cli -tod2s -v <output version> <input files>
 ```
 
 ## Links
